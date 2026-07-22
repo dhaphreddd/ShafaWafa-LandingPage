@@ -266,7 +266,7 @@ export default function Galeri() {
 
           {/* VIDEO GALLERY CONTENT */}
           <div id="video-gallery-content" className={`gallery-tab-content ${activeTab === "video" ? "active" : ""}`}>
-            <div className="video-gallery-grid animate-on-scroll" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "30px", marginTop: "40px" }}>
+            <div className="video-gallery-grid animate-on-scroll">
               {videoList.map((video) => (
                 <div className="video-card animate-on-scroll" onClick={() => openVideoPlayer(video.youtube_id)} key={video.id}>
                   <div className="video-img-wrapper-page">
