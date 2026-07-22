@@ -3,6 +3,7 @@ import MosqueScene from "./MosqueScene";
 import { useNavigate, Link } from "react-router-dom";
 import { auth, isFirebaseConfigured } from "../firebase";
 import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { formatImageUrl } from "../utils/imageHelper";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -87,7 +88,7 @@ export default function Login() {
       }}>
 
         <div style={{ width: "100%", maxWidth: "360px", textAlign: "center" }}>
-          <img src="/storage/logo-sm.webp" alt="Logo Yayasan"
+          <img src={formatImageUrl("logo-sm.webp")} alt="Logo Yayasan"
             style={{ width: "78px", height: "78px", borderRadius: "50%", marginBottom: "18px", border: "2.5px solid #d9a830" }} />
 
           <h2 style={{

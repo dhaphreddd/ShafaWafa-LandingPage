@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { formatImageUrl } from "../utils/imageHelper";
 
 export default function MosqueScene({ timeStr, dateStr }) {
   const canvasRef = useRef(null);
@@ -726,7 +727,7 @@ export default function MosqueScene({ timeStr, dateStr }) {
     >
       {/* Brand header */}
       <div style={{ display: "flex", alignItems: "center", gap: "14px", zIndex: 10, position: "relative" }}>
-        <img src="/storage/logo-sm.webp" alt="Logo" style={{ width: "48px", height: "48px", borderRadius: "50%", border: "2px solid #d9a830" }} />
+        <img src={formatImageUrl("logo-sm.webp")} alt="Logo" style={{ width: "48px", height: "48px", borderRadius: "50%", border: "2px solid #d9a830" }} />
         <div>
           <h4 style={{ margin: 0, color: "#fff", fontSize: "14px", fontFamily: "Playfair Display, serif", fontWeight: 700 }}>
             Ahlus-Shafa Wal-Wafa

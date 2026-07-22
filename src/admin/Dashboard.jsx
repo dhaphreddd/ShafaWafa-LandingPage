@@ -694,7 +694,7 @@ export default function Dashboard() {
       {/* ── Sidebar Navigation (Same design as reference layout) ── */}
       <div className="sidebar">
         <div className="sidebar-header">
-          <img src="/storage/logo-sm.webp" className="logo-icon" alt="Logo" />
+          <img src={formatImageUrl("logo-sm.webp")} className="logo-icon" alt="Logo" />
           <span className="logo-text">SIMAYA ADMIN</span>
         </div>
         <div className="nav-menu">
@@ -1294,7 +1294,7 @@ export default function Dashboard() {
                         <div className="crud-item" style={{ flexDirection: "column", padding: "0", overflow: "hidden", alignItems: "stretch" }}>
                           <div style={{ height: "160px", background: "#000", position: "relative" }}>
                             {thumbPhoto ? (
-                              <img src={thumbPhoto.image_path.startsWith("http") ? thumbPhoto.image_path : `/storage/${thumbPhoto.image_path}`} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                              <img src={formatImageUrl(thumbPhoto.image_path)} alt="" referrerPolicy="no-referrer" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                             ) : (
                               <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%", color: "rgba(255,255,255,0.2)" }}><i className="far fa-image fa-2x"></i></div>
                             )}
