@@ -1,7 +1,10 @@
 import React from "react";
 
 export function formatImageUrl(path) {
-  if (!path) return "/storage/logo.webp";
+  const baseUrl = import.meta.env.BASE_URL || "/";
+  const defaultLogo = baseUrl.endsWith("/") ? `${baseUrl}storage/logo.webp` : `${baseUrl}/storage/logo.webp`;
+  
+  if (!path) return defaultLogo;
   let url = path.trim();
 
   // If Google Drive link or Googleusercontent link
@@ -22,5 +25,6 @@ export function formatImageUrl(path) {
     return url;
   }
 
-  return `/storage/${url}`;
+  const cleanPath = url.startsWith("/") ? url.substring(1) : url;
+  return baseUrl.endsWith("/") ? `${baseUrl}storage/${cleanPath}` : `${baseUrl}/storage/${cleanPath}`;
 }
