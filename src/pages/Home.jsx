@@ -365,8 +365,9 @@ export default function Home({ settings }) {
               <div className="hero-visual-ornament"></div>
               <div className="hero-visual-card">
                 <img 
-                  src="/storage/logo.webp" 
+                  src={formatImageUrl("logo.webp")} 
                   alt="Logo Yayasan Pesantren Ahlus-Shafa Wal-Wafa" 
+                  className="hero-logo-img"
                   width="200" 
                   height="200"
                 />

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { getSiteSettings, getCollectionData } from "../firebase";
+import { getCollectionData } from "../firebase";
+import { formatImageUrl } from "../utils/imageHelper";
 
-export default function Profil({ settings }) {
+export default function Profil({ settings = {} }) {
   const [misiList, setMisiList] = useState([]);
   const [sejarahList, setSejarahList] = useState([]);
   const [strukturList, setStrukturList] = useState([]);
@@ -71,7 +72,7 @@ export default function Profil({ settings }) {
             <div className="biografi-right animate-on-scroll" style={{ transitionDelay: "0.15s" }}>
               <div className="biografi-card">
                 <div className="biografi-img-frame">
-                  <img src="/storage/gallery/abi.jpg" alt={settings.biografi_panggilan || "Buya As-Shafa"} loading="lazy" />
+                  <img src={formatImageUrl("gallery/abi.jpg")} alt={settings.biografi_panggilan || "Buya As-Shafa"} loading="lazy" />
                 </div>
                 <div className="biografi-card-body text-center">
                   <div className="biografi-name">{settings.biografi_nama || "KH. Mohammad Nizam As-Shofa"}</div>

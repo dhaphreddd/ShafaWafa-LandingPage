@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { formatImageUrl } from "../utils/imageHelper";
 
 export default function Layout({ children, settings }) {
   const [scrolled, setScrolled] = useState(false);
@@ -68,7 +69,7 @@ export default function Layout({ children, settings }) {
         <div className="nav-container">
           <Link to="/" className="nav-brand">
             <img 
-              src="/storage/logo-sm.webp" 
+              src={formatImageUrl("logo-sm.webp")} 
               alt="Logo Yayasan Pesantren Ahlus-Shafa Wal-Wafa" 
               className="nav-logo-img" 
               width="46" 
@@ -195,11 +196,11 @@ export default function Layout({ children, settings }) {
           <div className="footer-brand">
             <div className="footer-logo">
               <img 
-                src="/storage/logo-sm.webp" 
-                alt="Logo" 
+                src={formatImageUrl("logo-sm.webp")} 
+                alt="Logo Yayasan" 
                 className="footer-logo-img" 
-                width="44" 
-                height="44" 
+                width="40" 
+                height="40" 
                 loading="lazy"
               />
               <div className="footer-logo-text">
