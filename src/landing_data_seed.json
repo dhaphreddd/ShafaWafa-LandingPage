@@ -1,0 +1,1132 @@
+{
+    "site_settings": [
+        {
+            "id": 1,
+            "key": "hero_arabic",
+            "value": "أَهْلُ الصَّفَا وَالْوَفَا",
+            "type": "text",
+            "group": "hero",
+            "label": "Teks Arab (Kaligrafi)",
+            "created_at": "2026-04-21 22:50:25",
+            "updated_at": "2026-04-21 23:25:54"
+        },
+        {
+            "id": 2,
+            "key": "hero_title",
+            "value": "Yayasan Pesantren Ahlus-Shafa Wal-Wafa",
+            "type": "text",
+            "group": "hero",
+            "label": "Judul Hero (Baris 1 & 2)",
+            "created_at": "2026-04-21 22:50:25",
+            "updated_at": "2026-04-21 23:25:54"
+        },
+        {
+            "id": 3,
+            "key": "hero_subtitle",
+            "value": "Lembaga pendidikan Islam yang berdedikasi dalam pembinaan spiritual, penataan hati, dan pengabdian sosial. Di bawah asuhan KH. Mohammad Nizam As-Shofa (Buya As-Shafa).",
+            "type": "textarea",
+            "group": "hero",
+            "label": "Subtitle \/ Deskripsi",
+            "created_at": "2026-04-21 22:50:25",
+            "updated_at": "2026-04-21 23:25:54"
+        },
+        {
+            "id": 4,
+            "key": "stat_tahun_berdiri",
+            "value": "2002",
+            "type": "text",
+            "group": "stats",
+            "label": "Statistik: Tahun Berdiri",
+            "created_at": "2026-04-21 22:50:25",
+            "updated_at": "2026-04-21 23:25:54"
+        },
+        {
+            "id": 5,
+            "key": "stat_tahun_mengabdi",
+            "value": "20+",
+            "type": "text",
+            "group": "stats",
+            "label": "Statistik: Tahun Mengabdi",
+            "created_at": "2026-04-21 22:50:25",
+            "updated_at": "2026-04-21 23:25:54"
+        },
+        {
+            "id": 6,
+            "key": "stat_jamaah",
+            "value": "1000+",
+            "type": "text",
+            "group": "stats",
+            "label": "Statistik: Jumlah Jamaah",
+            "created_at": "2026-04-21 22:50:25",
+            "updated_at": "2026-04-21 23:25:54"
+        },
+        {
+            "id": 7,
+            "key": "tentang_nama_pengasuh",
+            "value": "KH. Mohammad Nizam As-Shofa",
+            "type": "text",
+            "group": "tentang",
+            "label": "Nama Pengasuh",
+            "created_at": "2026-04-21 22:50:25",
+            "updated_at": "2026-04-24 04:44:12"
+        },
+        {
+            "id": 8,
+            "key": "tentang_peran_pengasuh",
+            "value": "Pembina dan Pengasuh Yayasan Pesantren Ahlus-Shafa Wal-Wafa",
+            "type": "text",
+            "group": "tentang",
+            "label": "Peran \/ Jabatan Pengasuh",
+            "created_at": "2026-04-21 22:50:25",
+            "updated_at": "2026-04-24 04:44:12"
+        },
+        {
+            "id": 9,
+            "key": "tentang_quote",
+            "value": "Dari pengajian tujuh orang di hari Rabu, lahirlah sebuah gerakan spiritual yang kini menjangkau ribuan jiwa — membina hati agar bersih (shafa) dan menepati janji (wafa) kepada Allah SWT.",
+            "type": "textarea",
+            "group": "tentang",
+            "label": "Kutipan \/ Motto",
+            "created_at": "2026-04-21 22:50:25",
+            "updated_at": "2026-04-24 04:44:12"
+        },
+        {
+            "id": 10,
+            "key": "tentang_paragraf_1",
+            "value": "Yayasan Pesantren Ahlus-Shafa Wal-Wafa didirikan pada 17 Rabi'ul Awal 1423 H bertepatan pada tanggal 29 Mei 2002 oleh KH. Mohammad Nizam As-Shofa (Buya As-Shafa).",
+            "type": "textarea",
+            "group": "tentang",
+            "label": "Paragraf 1 (Sejarah)",
+            "created_at": "2026-04-21 22:50:25",
+            "updated_at": "2026-04-24 04:44:12"
+        },
+        {
+            "id": 11,
+            "key": "tentang_paragraf_2",
+            "value": "Ahlus-Shafa Wal-Wafa merupakan wadah pembinaan ruhani yang menekankan pada kedalaman ilmu tasawuf dan pendekatan spiritual untuk meraih kedekatan dengan Allah SWT. Nama \"Ahlus-Shafa Wal-Wafa\" bermakna mereka yang bersih hatinya (shafa) dan menepati janjinya (wafa).",
+            "type": "textarea",
+            "group": "tentang",
+            "label": "Paragraf 2 (Deskripsi Utama)",
+            "created_at": "2026-04-21 22:50:25",
+            "updated_at": "2026-04-24 04:44:12"
+        },
+        {
+            "id": 12,
+            "key": "tentang_paragraf_3",
+            "value": "Berawal dari pengajian rutin setiap Rabu malam yang hanya dihadiri tujuh orang — sebagian besar kerabat dekat — kini telah berkembang menjadi pusat pembinaan spiritual yang menjangkau ribuan jamaah dari berbagai penjuru.",
+            "type": "textarea",
+            "group": "tentang",
+            "label": "Paragraf 3 (Perkembangan)",
+            "created_at": "2026-04-21 22:50:25",
+            "updated_at": "2026-04-24 04:44:12"
+        },
+        {
+            "id": 13,
+            "key": "kegiatan_list",
+            "value": "[{\"emoji\":\"🕌\",\"bg\":\"kc-1\",\"badge\":\"Rutin\",\"title\":\"Majelis Reboan Agung\",\"desc\":\"Pengajian inti dan pembinaan ruhani melalui ilmu tasawuf setiap Rabu malam. Kegiatan ikonik yang menjadi pondasi utama pesantren sejak 2002.\",\"jadwal\":\"Setiap Rabu Malam\",\"image_path\":null},{\"emoji\":\"🤲\",\"bg\":\"kc-2\",\"badge\":\"Rutin\",\"title\":\"Istighasah As-Shafa\",\"desc\":\"Doa bersama yang melibatkan jamaah dari berbagai penjuru untuk memohon keberkahan, perlindungan, dan kedamaian dari Allah SWT.\",\"jadwal\":\"Jumat Wage\",\"image_path\":null},{\"emoji\":\"✨\",\"bg\":\"kc-3\",\"badge\":\"Tahunan\",\"title\":\"Peringatan Maulid Nabi\",\"desc\":\"Perayaan tahunan memperingati kelahiran Nabi Muhammad SAW. Diisi ceramah agama, Panggung Kebhinekaan, Bazar Maulid Shafa'i, dan Musabaqoh Tartil.\",\"jadwal\":\"Setiap Bulan Maulid\",\"image_path\":null},{\"emoji\":\"💝\",\"bg\":\"kc-5\",\"badge\":\"Sosial\",\"title\":\"SALIK — Jalin Kasih Raih Kasih\",\"desc\":\"Santunan anak yatim & duafa, khitanan massal, pengobatan gratis, dan pemeriksaan kesehatan masyarakat oleh Pondok Yatim Duafa Salik Shafa'i.\",\"jadwal\":\"Bulan Muharam (Tahunan)\",\"image_path\":null},{\"emoji\":\"💧\",\"bg\":\"kc-4\",\"badge\":\"Unit Usaha\",\"title\":\"MaDa — Air Minum Kemasan\",\"desc\":\"Unit usaha mandiri pesantren yang memproduksi air minum dalam kemasan melalui PT. Ahlus Shafa Wal Wafa untuk mendukung kemandirian ekonomi yayasan.\",\"jadwal\":\"Operasional\",\"image_path\":null},{\"emoji\":\"🎭\",\"bg\":\"kc-6\",\"badge\":\"Budaya\",\"title\":\"Pelestarian Budaya Nusantara\",\"desc\":\"Kolaborasi dengan Dewan Kesenian Sidoarjo dalam kegiatan \\\"Seribu Warga Sidoarjo Nembang Macapat\\\" untuk mengenalkan budaya kepada generasi muda.\",\"jadwal\":\"Insidental\",\"image_path\":null}]",
+            "type": "json",
+            "group": "kegiatan",
+            "label": "Daftar Kegiatan (JSON)",
+            "created_at": "2026-04-21 22:50:25",
+            "updated_at": "2026-04-21 22:56:27"
+        },
+        {
+            "id": 14,
+            "key": "nilai_list",
+            "value": "[{\"icon\":\"fas fa-star-and-crescent\",\"title\":\"Keikhlasan\",\"desc\":\"Setiap amal ibadah dan pengabdian dilakukan semata-mata karena Allah SWT, jauh dari pamrih dan kepentingan duniawi.\"},{\"icon\":\"fas fa-leaf\",\"title\":\"Kesabaran\",\"desc\":\"Mengajarkan kesabaran sebagai bekal utama dalam menghadapi ujian kehidupan dan menjaga keistiqomahan dalam beribadah.\"},{\"icon\":\"fas fa-hands-holding-heart\",\"title\":\"Ukhuwah Islamiyah\",\"desc\":\"Mempererat tali persaudaraan sesama muslim dan harmoni lintas agama sebagai kekuatan kolektif untuk kedamaian bersama.\"},{\"icon\":\"fas fa-lightbulb\",\"title\":\"Akhlak Mulia\",\"desc\":\"Pembinaan karakter dan budi pekerti mulia melalui tasawuf sebagai cerminan ajaran Rasulullah SAW dalam kehidupan sehari-hari.\"}]",
+            "type": "json",
+            "group": "nilai",
+            "label": "Daftar Nilai \/ Pilar (JSON)",
+            "created_at": "2026-04-21 22:50:25",
+            "updated_at": "2026-04-21 22:50:25"
+        },
+        {
+            "id": 15,
+            "key": "lokasi_alamat",
+            "value": "Jl. Darmo No. 01 Simoketawang, Wonoayu, Sidoarjo, Jawa Timur, Indonesia 61261",
+            "type": "textarea",
+            "group": "lokasi",
+            "label": "Alamat Lengkap",
+            "created_at": "2026-04-21 22:50:25",
+            "updated_at": "2026-04-21 23:25:54"
+        },
+        {
+            "id": 16,
+            "key": "lokasi_jenis",
+            "value": "Lembaga Pesantren Tasawuf",
+            "type": "text",
+            "group": "lokasi",
+            "label": "Jenis Lembaga",
+            "created_at": "2026-04-21 22:50:25",
+            "updated_at": "2026-04-21 23:25:54"
+        },
+        {
+            "id": 17,
+            "key": "lokasi_kegiatan_terbuka",
+            "value": "Majelis Reboan Agung — Rabu Malam, Istighasah As-Shafa — Jumat Wage",
+            "type": "text",
+            "group": "lokasi",
+            "label": "Info Kegiatan Terbuka",
+            "created_at": "2026-04-21 22:50:25",
+            "updated_at": "2026-04-21 23:25:54"
+        },
+        {
+            "id": 18,
+            "key": "lokasi_maps_embed_url",
+            "value": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3957.4!2d112.6042286!3d-7.4474082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e780a10effcfa87%3A0x2dd578c71a39fa22!2sPP.Ahlus+Shofa+Wal+Wafa!5e0!3m2!1sid!2sid!4v1713711600000!5m2!1sid!2sid",
+            "type": "text",
+            "group": "lokasi",
+            "label": "Google Maps Embed URL",
+            "created_at": "2026-04-21 22:50:25",
+            "updated_at": "2026-04-21 23:25:54"
+        },
+        {
+            "id": 19,
+            "key": "lokasi_maps_link",
+            "value": "https:\/\/www.google.com\/maps\/place\/PP.Ahlus+Shofa+Wal+Wafa\/@-7.4474082,112.6042286,17z",
+            "type": "text",
+            "group": "lokasi",
+            "label": "Link Google Maps (Navigasi)",
+            "created_at": "2026-04-21 22:50:25",
+            "updated_at": "2026-04-21 23:25:54"
+        },
+        {
+            "id": 20,
+            "key": "sosial_instagram",
+            "value": "https:\/\/www.instagram.com\/ahlusshafa_walwafa\/",
+            "type": "text",
+            "group": "sosial",
+            "label": "URL Instagram",
+            "created_at": "2026-04-21 22:50:25",
+            "updated_at": "2026-04-21 23:25:54"
+        },
+        {
+            "id": 21,
+            "key": "sosial_youtube",
+            "value": "https:\/\/www.youtube.com\/channel\/UCJFsTPOTUEcMisoNbk2GvUw",
+            "type": "text",
+            "group": "sosial",
+            "label": "URL YouTube",
+            "created_at": "2026-04-21 22:50:26",
+            "updated_at": "2026-04-21 23:25:54"
+        },
+        {
+            "id": 22,
+            "key": "tentang_features",
+            "value": "[{\"icon\":\"fas fa-heart\",\"title\":\"Kedalaman Spiritual\",\"desc\":\"Membimbing jamaah melalui pendekatan thariqah untuk mencapai kebersihan hati dan kedekatan dengan Sang Khalik.\"},{\"icon\":\"fas fa-mosque\",\"title\":\"Majelis & Istighasah\",\"desc\":\"Majelis Reboan Agung dan Istighasah As-Shafa sebagai wadah pembinaan ruhani rutin bagi seluruh jamaah.\"},{\"icon\":\"fas fa-hands-helping\",\"title\":\"Pengabdian Sosial\",\"desc\":\"Program SALIK (Salik Shafa'i) — menampung anak yatim, duafa, dan menyelenggarakan aksi sosial \\\"Jalin Kasih Raih Kasih\\\" setiap tahun.\"}]",
+            "type": "json",
+            "group": "tentang",
+            "label": "Fitur \/ Pilar Tentang (JSON)",
+            "created_at": "2026-04-21 22:55:10",
+            "updated_at": "2026-04-21 22:55:10"
+        },
+        {
+            "id": 23,
+            "key": "visi_teks",
+            "value": "Menjadi pusat pembinaan spiritual bertaraf internasional dalam mencetak insan yang bersih hati (Shafa) dan menepati janji kepada Allah (Wafa).",
+            "type": "textarea",
+            "group": "visi",
+            "label": "Visi Yayasan",
+            "created_at": "2026-04-22 00:03:00",
+            "updated_at": "2026-04-22 00:03:00"
+        },
+        {
+            "id": 24,
+            "key": "biografi_nama",
+            "value": "KH. Mohammad Nizam As-Shofa",
+            "type": "text",
+            "group": "biografi",
+            "label": "Nama Pengasuh (Biografi)",
+            "created_at": "2026-05-27 13:54:12",
+            "updated_at": "2026-05-27 13:54:12"
+        },
+        {
+            "id": 25,
+            "key": "biografi_jabatan",
+            "value": "Mursyid Thariqah & Pendiri Yayasan",
+            "type": "text",
+            "group": "biografi",
+            "label": "Jabatan (Biografi)",
+            "created_at": "2026-05-27 13:54:12",
+            "updated_at": "2026-05-27 13:54:12"
+        },
+        {
+            "id": 26,
+            "key": "biografi_panggilan",
+            "value": "Buya As-Shafa",
+            "type": "text",
+            "group": "biografi",
+            "label": "Panggilan Akrab",
+            "created_at": "2026-05-27 13:54:12",
+            "updated_at": "2026-05-27 13:54:12"
+        },
+        {
+            "id": 27,
+            "key": "biografi_quote",
+            "value": "Membersihkan hati, menepati janji, mengabdi untuk kemaslahatan seluruh umat manusia.",
+            "type": "textarea",
+            "group": "biografi",
+            "label": "Quote Biografi",
+            "created_at": "2026-05-27 13:54:12",
+            "updated_at": "2026-05-27 13:54:12"
+        },
+        {
+            "id": 28,
+            "key": "biografi_paragraf_1",
+            "value": "KH. Mohammad Nizam As-Shofa, yang akrab disapa Buya As-Shafa, merupakan pendiri sekaligus pengasuh utama Yayasan Pesantren Ahlus-Shafa Wal-Wafa. Beliau adalah seorang tokoh spiritual dan pembimbing tarekat yang memiliki kedalaman ilmu dalam bidang tasawuf, penataan hati, dan pembersihan jiwa.",
+            "type": "textarea",
+            "group": "biografi",
+            "label": "Bio Paragraf 1",
+            "created_at": "2026-05-27 13:54:12",
+            "updated_at": "2026-05-27 13:54:12"
+        },
+        {
+            "id": 29,
+            "key": "biografi_paragraf_2",
+            "value": "Dikenal dengan pembawaan beliau yang sejuk, bersahaja, santun, dan penuh kasih sayang, beliau membimbing ribuan jamaah untuk mensucikan hati (tazkiyatun nafs) dan mengistiqomahkan zikir agar senantiasa dekat dengan Allah SWT. Beliau menekankan pentingnya keseimbangan antara kedalaman ruhani (tasawuf) dan aksi sosial kemasyarakatan.",
+            "type": "textarea",
+            "group": "biografi",
+            "label": "Bio Paragraf 2",
+            "created_at": "2026-05-27 13:54:12",
+            "updated_at": "2026-05-27 13:54:12"
+        },
+        {
+            "id": 30,
+            "key": "biografi_paragraf_3",
+            "value": "Di bawah bimbingan beliau, Pesantren Ahlus-Shafa Wal-Wafa tidak hanya menjadi tempat ibadah dan menuntut ilmu, melainkan juga wadah gerakan sosial kemanusiaan seperti menyantuni anak yatim, membantu kaum duafa, dan merintis program kemandirian ekonomi umat melalui unit-unit usaha mandiri.",
+            "type": "textarea",
+            "group": "biografi",
+            "label": "Bio Paragraf 3",
+            "created_at": "2026-05-27 13:54:12",
+            "updated_at": "2026-05-27 13:54:12"
+        }
+    ],
+    "landing_hero_stats": [
+        {
+            "id": 1,
+            "label": "Tahun Berdiri",
+            "value": "2002",
+            "icon": "fas fa-calendar-alt",
+            "urutan": 1,
+            "is_active": 1,
+            "created_at": "2026-04-21 23:38:21",
+            "updated_at": "2026-04-21 23:38:21"
+        },
+        {
+            "id": 2,
+            "label": "Tahun Mengabdi",
+            "value": "20+",
+            "icon": "fas fa-heart",
+            "urutan": 2,
+            "is_active": 1,
+            "created_at": "2026-04-21 23:38:21",
+            "updated_at": "2026-04-21 23:38:21"
+        },
+        {
+            "id": 3,
+            "label": "Jamaah",
+            "value": "15000+",
+            "icon": "fas fa-users",
+            "urutan": 3,
+            "is_active": 1,
+            "created_at": "2026-04-21 23:38:21",
+            "updated_at": "2026-04-24 04:44:52"
+        }
+    ],
+    "landing_nilais": [
+        {
+            "id": 1,
+            "icon": "fa-solid fa-handshake",
+            "title": "Loyalis",
+            "desc": "Menjunjung tinggi komitmen, kesetiaan terhadap visi yayasan, serta menjaga amanah dalam setiap peran dan tanggung jawab.",
+            "urutan": 1,
+            "is_active": 1,
+            "created_at": "2026-04-21 23:38:21",
+            "updated_at": "2026-04-21 23:56:31"
+        },
+        {
+            "id": 2,
+            "icon": "fa-solid fa-bolt",
+            "title": "Dinamis",
+            "desc": "Bergerak aktif, kreatif, dan progresif dalam menghadapi perubahan untuk terus memberikan manfaat yang lebih luas bagi umat dan masyarakat.",
+            "urutan": 2,
+            "is_active": 1,
+            "created_at": "2026-04-21 23:38:21",
+            "updated_at": "2026-04-21 23:57:09"
+        },
+        {
+            "id": 3,
+            "icon": "fa-solid fa-scale-balanced",
+            "title": "Realistis",
+            "desc": "Bertindak dengan bijak dan terukur, memahami kondisi nyata, serta mengambil keputusan yang rasional dan solutif.",
+            "urutan": 3,
+            "is_active": 1,
+            "created_at": "2026-04-21 23:38:21",
+            "updated_at": "2026-04-21 23:57:58"
+        },
+        {
+            "id": 4,
+            "icon": "fa-sharp fa-solid fa-arrows-rotate",
+            "title": "Adaptif",
+            "desc": "Mampu menyesuaikan diri dengan perkembangan zaman, teknologi, dan kebutuhan masyarakat tanpa meninggalkan nilai-nilai utama yayasan.",
+            "urutan": 4,
+            "is_active": 1,
+            "created_at": "2026-04-21 23:38:21",
+            "updated_at": "2026-04-22 00:22:02"
+        }
+    ],
+    "landing_kegiatans": [
+        {
+            "id": 1,
+            "title": "Majelis Reboan Agung",
+            "desc": "Pengajian inti dan pembinaan ruhani melalui ilmu tasawuf setiap Rabu malam. Kegiatan ikonik yang menjadi pondasi utama pesantren sejak 2002.",
+            "jadwal": "Setiap Rabu Malam",
+            "badge": "Wajib",
+            "emoji": "🕌",
+            "bg_class": "kc-1",
+            "image_path": null,
+            "urutan": 2,
+            "is_active": 1,
+            "created_at": "2026-04-21 23:06:35",
+            "updated_at": "2026-04-21 23:13:40"
+        },
+        {
+            "id": 2,
+            "title": "Istighasah As-Shafa",
+            "desc": "Doa bersama yang melibatkan jamaah dari berbagai penjuru untuk memohon keberkahan, perlindungan, dan kedamaian dari Allah SWT.",
+            "jadwal": "Jumat Wage",
+            "badge": "Rutin",
+            "emoji": "🤲",
+            "bg_class": "kc-2",
+            "image_path": null,
+            "urutan": 1,
+            "is_active": 1,
+            "created_at": "2026-04-21 23:06:35",
+            "updated_at": "2026-04-21 23:13:40"
+        },
+        {
+            "id": 3,
+            "title": "Peringatan Maulid Nabi",
+            "desc": "Perayaan tahunan memperingati kelahiran Nabi Muhammad SAW. Diisi ceramah agama, Panggung Kebhinekaan, Bazar Maulid Shafa'i, dan Musabaqoh Tartil.",
+            "jadwal": "Setiap Bulan Maulid",
+            "badge": "Tahunan",
+            "emoji": "✨",
+            "bg_class": "kc-3",
+            "image_path": null,
+            "urutan": 3,
+            "is_active": 1,
+            "created_at": "2026-04-21 23:06:35",
+            "updated_at": "2026-04-21 23:13:40"
+        },
+        {
+            "id": 4,
+            "title": "SALIK — Jalin Kasih",
+            "desc": "Santunan anak yatim & duafa, khitanan massal, pengobatan gratis, dan pemeriksaan kesehatan masyarakat oleh Pondok Yatim Duafa Salik Shafa'i.",
+            "jadwal": "Bulan Muharam (Tahunan)",
+            "badge": "Sosial",
+            "emoji": "💝",
+            "bg_class": "kc-5",
+            "image_path": null,
+            "urutan": 4,
+            "is_active": 1,
+            "created_at": "2026-04-21 23:06:35",
+            "updated_at": "2026-04-23 03:05:48"
+        },
+        {
+            "id": 5,
+            "title": "MaDa — Air Minum Kemasan",
+            "desc": "Unit usaha mandiri pesantren yang memproduksi air minum dalam kemasan melalui PT. Ahlus Shafa Wal Wafa untuk mendukung kemandirian ekonomi.",
+            "jadwal": "Operasional",
+            "badge": "Unit Usaha",
+            "emoji": "💧",
+            "bg_class": "kc-4",
+            "image_path": null,
+            "urutan": 5,
+            "is_active": 1,
+            "created_at": "2026-04-21 23:06:35",
+            "updated_at": "2026-04-21 23:13:40"
+        },
+        {
+            "id": 6,
+            "title": "Pelestarian Budaya Nusantara",
+            "desc": "Kolaborasi dengan Dewan Kesenian Sidoarjo dalam \"Seribu Warga Sidoarjo Nembang Macapat\" untuk mengenalkan budaya kepada generasi muda.",
+            "jadwal": "Insidental",
+            "badge": "Budaya",
+            "emoji": "🎭",
+            "bg_class": "kc-6",
+            "image_path": null,
+            "urutan": 6,
+            "is_active": 1,
+            "created_at": "2026-04-21 23:06:35",
+            "updated_at": "2026-04-21 23:13:40"
+        }
+    ],
+    "landing_artikels": [
+        {
+            "id": 1,
+            "judul": "Menata Hati Menuju Keikhlasan Sejati",
+            "excerpt": "Kajian mendalam tentang bagaimana membersihkan diri dari penyakit riya' dan mewujudkan keikhlasan sejati dalam setiap amal ibadah...",
+            "konten": "Keikhlasan merupakan pondasi utama dalam setiap amal ibadah. Tanpa keikhlasan, sebuah amalan bagaikan bangunan tanpa pondasi — rapuh dan tidak bernilai di sisi Allah SWT. Dalam kajian tasawuf, keikhlasan (ikhlas) bermakna memurnikan niat semata-mata untuk Allah, jauh dari pamrih duniawi maupun pujian makhluk. Buya As-Shafa senantiasa mengingatkan bahwa proses tazkiyatun nafs (pembersihan jiwa) dimulai dari memperbaiki niat dan menjaga keikhlasan dalam setiap langkah kehidupan.",
+            "gambar_path": null,
+            "tag": "Tasawuf",
+            "penulis": "Redaksi SIMAYA",
+            "tanggal": "2026-05-20",
+            "urutan": 1,
+            "is_active": 1,
+            "created_at": "2026-05-27 13:54:12",
+            "updated_at": "2026-05-27 13:54:12"
+        },
+        {
+            "id": 2,
+            "judul": "Makna Filosofis Ahlus-Shafā wal-Wafā",
+            "excerpt": "Mengupas makna mendalam di balik nama pesantren: kesucian hati (Shafa) dan kesetiaan menepati janji (Wafa) kepada Allah SWT...",
+            "konten": "Nama Ahlus-Shafa Wal-Wafa memiliki makna yang sangat dalam. \"Shafa\" bermakna bersih dan jernih, merujuk pada kebersihan hati (shafa al-qalb) dari segala penyakit batin seperti hasud, dengki, dan riya. Sementara \"Wafa\" bermakna setia dan menepati janji, yakni janji primordial manusia kepada Allah SWT sebagaimana termaktub dalam QS. Al-A'raf: 172. Dengan demikian, Ahlus-Shafa Wal-Wafa adalah mereka yang senantiasa menjaga kesucian hati dan istiqomah menepati janjinya kepada Sang Pencipta.",
+            "gambar_path": null,
+            "tag": "Kajian",
+            "penulis": "Anonymous",
+            "tanggal": "2026-05-14",
+            "urutan": 2,
+            "is_active": 1,
+            "created_at": "2026-05-27 13:54:12",
+            "updated_at": "2026-06-22 18:44:26"
+        },
+        {
+            "id": 3,
+            "judul": "Thariqah di Era Modern: Menemukan Ketenangan",
+            "excerpt": "Bagaimana ajaran thariqah dan istiqomah berzikir menjadi oase penyejuk jiwa di tengah kesibukan dan hiruk-pikuk kehidupan modern...",
+            "konten": "Di era modern yang penuh dengan kesibukan dan tekanan, banyak orang kehilangan keseimbangan batin. Ajaran thariqah menawarkan jalan kembali menuju ketenangan sejati melalui dzikir, muraqabah, dan muhasabah. Buya As-Shafa mengajarkan bahwa zikir bukan sekadar pengulangan lafal, melainkan proses menghadirkan Allah dalam setiap detak jantung dan tarikan napas. Melalui istiqomah berzikir, seseorang akan menemukan kedamaian yang tidak bisa dibeli oleh materi duniawi.",
+            "gambar_path": null,
+            "tag": "Spiritual",
+            "penulis": "Admin",
+            "tanggal": "2026-05-09",
+            "urutan": 3,
+            "is_active": 1,
+            "created_at": "2026-05-27 13:54:12",
+            "updated_at": "2026-06-22 18:44:14"
+        },
+        {
+            "id": 4,
+            "judul": "Masjid Jami' Shafa Wafa",
+            "excerpt": "Masjid Jami' Shafa Wafa",
+            "konten": "lorem ipsum yagesya\r\nlalu ini apa",
+            "gambar_path": "landing\/artikel\/art_1780187529_433.webp",
+            "tag": "Pembangunan",
+            "penulis": "Redaksi As-Shafa",
+            "tanggal": "2026-05-30",
+            "urutan": 4,
+            "is_active": 1,
+            "created_at": "2026-05-31 07:32:09",
+            "updated_at": "2026-05-31 21:16:22"
+        }
+    ],
+    "landing_galeri_events": [
+        {
+            "id": 6,
+            "title": "Istighasah As-Shafa",
+            "description": "Jum'at Wage, 22 Mei 2026\r\nAula Yayasan Pesantren Ahlus-Shafa Wal-Wafa",
+            "is_active": 1,
+            "urutan": 1,
+            "created_at": "2026-05-30 22:16:33",
+            "updated_at": "2026-05-30 22:19:13"
+        },
+        {
+            "id": 7,
+            "title": "Idul Adha 1447 H",
+            "description": "Penyembelihan Hewan Qurban, Hari Raya Idul Adha 1447 H\r\nRabu, 27 Mei 2026\r\nYayasan Pesantren Ahlus-Shafa Wal-Wafa",
+            "is_active": 1,
+            "urutan": 2,
+            "created_at": "2026-05-30 22:18:53",
+            "updated_at": "2026-05-30 22:19:13"
+        },
+        {
+            "id": 8,
+            "title": "Suluk Ibrahimi 1447 H",
+            "description": "Pembukaan Suluk Ibrahimi Bulan Dzulhijjah 1447 H\r\nAula Yayasan Pesantren Ahlus-Shafa Wal-Wafa",
+            "is_active": 1,
+            "urutan": 3,
+            "created_at": "2026-05-30 22:29:22",
+            "updated_at": "2026-05-30 22:29:22"
+        }
+    ],
+    "landing_galeri_photos": [
+        {
+            "id": 6,
+            "event_id": 6,
+            "image_path": "landing\/galeri\/gal_1780154193_735.webp",
+            "caption": "Istighasah As-Shafa - Foto 1",
+            "is_thumbnail": 1,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:16:34",
+            "updated_at": "2026-05-30 22:16:34"
+        },
+        {
+            "id": 7,
+            "event_id": 6,
+            "image_path": "landing\/galeri\/gal_1780154194_233.webp",
+            "caption": "Istighasah As-Shafa - Foto 2",
+            "is_thumbnail": 0,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:16:35",
+            "updated_at": "2026-05-30 22:16:35"
+        },
+        {
+            "id": 8,
+            "event_id": 6,
+            "image_path": "landing\/galeri\/gal_1780154195_175.webp",
+            "caption": "Istighasah As-Shafa - Foto 3",
+            "is_thumbnail": 0,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:16:36",
+            "updated_at": "2026-05-30 22:16:36"
+        },
+        {
+            "id": 9,
+            "event_id": 6,
+            "image_path": "landing\/galeri\/gal_1780154196_969.webp",
+            "caption": "Istighasah As-Shafa - Foto 4",
+            "is_thumbnail": 0,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:16:37",
+            "updated_at": "2026-05-30 22:16:37"
+        },
+        {
+            "id": 10,
+            "event_id": 6,
+            "image_path": "landing\/galeri\/gal_1780154197_134.webp",
+            "caption": "Istighasah As-Shafa - Foto 5",
+            "is_thumbnail": 0,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:16:38",
+            "updated_at": "2026-05-30 22:16:38"
+        },
+        {
+            "id": 11,
+            "event_id": 6,
+            "image_path": "landing\/galeri\/gal_1780154198_176.webp",
+            "caption": "Istighasah As-Shafa - Foto 6",
+            "is_thumbnail": 0,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:16:39",
+            "updated_at": "2026-05-30 22:16:39"
+        },
+        {
+            "id": 12,
+            "event_id": 6,
+            "image_path": "landing\/galeri\/gal_1780154199_938.webp",
+            "caption": "Istighasah As-Shafa - Foto 7",
+            "is_thumbnail": 0,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:16:40",
+            "updated_at": "2026-05-30 22:16:40"
+        },
+        {
+            "id": 13,
+            "event_id": 6,
+            "image_path": "landing\/galeri\/gal_1780154200_127.webp",
+            "caption": "Istighasah As-Shafa - Foto 8",
+            "is_thumbnail": 0,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:16:41",
+            "updated_at": "2026-05-30 22:16:41"
+        },
+        {
+            "id": 14,
+            "event_id": 6,
+            "image_path": "landing\/galeri\/gal_1780154201_840.webp",
+            "caption": "Istighasah As-Shafa - Foto 9",
+            "is_thumbnail": 0,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:16:42",
+            "updated_at": "2026-05-30 22:16:42"
+        },
+        {
+            "id": 15,
+            "event_id": 7,
+            "image_path": "landing\/galeri\/gal_1780154333_152.webp",
+            "caption": "Idul Adha 1447 H - Foto 1",
+            "is_thumbnail": 1,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:18:54",
+            "updated_at": "2026-05-30 22:18:54"
+        },
+        {
+            "id": 16,
+            "event_id": 7,
+            "image_path": "landing\/galeri\/gal_1780154334_602.webp",
+            "caption": "Idul Adha 1447 H - Foto 2",
+            "is_thumbnail": 0,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:18:55",
+            "updated_at": "2026-05-30 22:18:55"
+        },
+        {
+            "id": 17,
+            "event_id": 7,
+            "image_path": "landing\/galeri\/gal_1780154335_410.webp",
+            "caption": "Idul Adha 1447 H - Foto 3",
+            "is_thumbnail": 0,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:18:56",
+            "updated_at": "2026-05-30 22:18:56"
+        },
+        {
+            "id": 18,
+            "event_id": 7,
+            "image_path": "landing\/galeri\/gal_1780154336_957.webp",
+            "caption": "Idul Adha 1447 H - Foto 4",
+            "is_thumbnail": 0,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:18:57",
+            "updated_at": "2026-05-30 22:18:57"
+        },
+        {
+            "id": 19,
+            "event_id": 7,
+            "image_path": "landing\/galeri\/gal_1780154337_613.webp",
+            "caption": "Idul Adha 1447 H - Foto 5",
+            "is_thumbnail": 0,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:18:58",
+            "updated_at": "2026-05-30 22:18:58"
+        },
+        {
+            "id": 20,
+            "event_id": 7,
+            "image_path": "landing\/galeri\/gal_1780154338_446.webp",
+            "caption": "Idul Adha 1447 H - Foto 6",
+            "is_thumbnail": 0,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:18:59",
+            "updated_at": "2026-05-30 22:18:59"
+        },
+        {
+            "id": 21,
+            "event_id": 7,
+            "image_path": "landing\/galeri\/gal_1780154339_977.webp",
+            "caption": "Idul Adha 1447 H - Foto 7",
+            "is_thumbnail": 0,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:19:00",
+            "updated_at": "2026-05-30 22:19:00"
+        },
+        {
+            "id": 22,
+            "event_id": 7,
+            "image_path": "landing\/galeri\/gal_1780154340_826.webp",
+            "caption": "Idul Adha 1447 H - Foto 8",
+            "is_thumbnail": 0,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:19:01",
+            "updated_at": "2026-05-30 22:19:01"
+        },
+        {
+            "id": 23,
+            "event_id": 8,
+            "image_path": "landing\/galeri\/gal_1780154962_121.webp",
+            "caption": "Suluk Ibrahimi 1447 H - Foto 1",
+            "is_thumbnail": 1,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:29:23",
+            "updated_at": "2026-05-30 22:29:23"
+        },
+        {
+            "id": 24,
+            "event_id": 8,
+            "image_path": "landing\/galeri\/gal_1780154963_513.webp",
+            "caption": "Suluk Ibrahimi 1447 H - Foto 2",
+            "is_thumbnail": 0,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:29:24",
+            "updated_at": "2026-05-30 22:29:24"
+        },
+        {
+            "id": 25,
+            "event_id": 8,
+            "image_path": "landing\/galeri\/gal_1780154964_827.webp",
+            "caption": "Suluk Ibrahimi 1447 H - Foto 3",
+            "is_thumbnail": 0,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:29:25",
+            "updated_at": "2026-05-30 22:29:25"
+        },
+        {
+            "id": 26,
+            "event_id": 8,
+            "image_path": "landing\/galeri\/gal_1780154965_696.webp",
+            "caption": "Suluk Ibrahimi 1447 H - Foto 4",
+            "is_thumbnail": 0,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:29:25",
+            "updated_at": "2026-05-30 22:29:25"
+        },
+        {
+            "id": 27,
+            "event_id": 8,
+            "image_path": "landing\/galeri\/gal_1780154965_570.webp",
+            "caption": "Suluk Ibrahimi 1447 H - Foto 5",
+            "is_thumbnail": 0,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:29:26",
+            "updated_at": "2026-05-30 22:29:26"
+        },
+        {
+            "id": 28,
+            "event_id": 8,
+            "image_path": "landing\/galeri\/gal_1780154966_994.webp",
+            "caption": "Suluk Ibrahimi 1447 H - Foto 6",
+            "is_thumbnail": 0,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:29:27",
+            "updated_at": "2026-05-30 22:29:27"
+        },
+        {
+            "id": 29,
+            "event_id": 8,
+            "image_path": "landing\/galeri\/gal_1780154967_565.webp",
+            "caption": "Suluk Ibrahimi 1447 H - Foto 7",
+            "is_thumbnail": 0,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:29:28",
+            "updated_at": "2026-05-30 22:29:28"
+        },
+        {
+            "id": 30,
+            "event_id": 8,
+            "image_path": "landing\/galeri\/gal_1780154968_573.webp",
+            "caption": "Suluk Ibrahimi 1447 H - Foto 8",
+            "is_thumbnail": 0,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:29:29",
+            "updated_at": "2026-05-30 22:29:29"
+        },
+        {
+            "id": 31,
+            "event_id": 8,
+            "image_path": "landing\/galeri\/gal_1780154969_198.webp",
+            "caption": "Suluk Ibrahimi 1447 H - Foto 9",
+            "is_thumbnail": 0,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:29:30",
+            "updated_at": "2026-05-30 22:29:30"
+        },
+        {
+            "id": 32,
+            "event_id": 8,
+            "image_path": "landing\/galeri\/gal_1780154970_360.webp",
+            "caption": "Suluk Ibrahimi 1447 H - Foto 10",
+            "is_thumbnail": 0,
+            "urutan": 0,
+            "created_at": "2026-05-30 22:29:31",
+            "updated_at": "2026-05-30 22:29:31"
+        }
+    ],
+    "landing_videos": [
+        {
+            "id": 2,
+            "title": "Tes",
+            "youtube_url": "https:\/\/www.youtube.com\/watch?v=F2f0FBtdchc",
+            "youtube_id": "F2f0FBtdchc",
+            "is_active": 1,
+            "urutan": 1,
+            "created_at": "2026-06-01 11:16:53",
+            "updated_at": "2026-06-01 11:16:53"
+        },
+        {
+            "id": 3,
+            "title": "Raker",
+            "youtube_url": "https:\/\/youtu.be\/qxoj6l_d_1o",
+            "youtube_id": "qxoj6l_d_1o",
+            "is_active": 1,
+            "urutan": 2,
+            "created_at": "2026-06-01 11:28:30",
+            "updated_at": "2026-06-01 11:28:30"
+        },
+        {
+            "id": 4,
+            "title": "Peletakan Batu Pertama",
+            "youtube_url": "https:\/\/www.youtube.com\/watch?v=XjqiF9BA_nw",
+            "youtube_id": "XjqiF9BA_nw",
+            "is_active": 1,
+            "urutan": 3,
+            "created_at": "2026-06-01 11:28:53",
+            "updated_at": "2026-06-01 11:28:53"
+        },
+        {
+            "id": 5,
+            "title": "Wisata Religi",
+            "youtube_url": "https:\/\/www.youtube.com\/watch?v=lrpgTdSLMiU",
+            "youtube_id": "lrpgTdSLMiU",
+            "is_active": 1,
+            "urutan": 4,
+            "created_at": "2026-06-01 11:29:13",
+            "updated_at": "2026-06-01 11:29:13"
+        }
+    ],
+    "landing_sosials": [
+        {
+            "id": 1,
+            "platform": "Instagram",
+            "url": "https:\/\/www.instagram.com\/ahlusshafa_walwafa\/",
+            "icon": "fab fa-instagram",
+            "color": "#E1306C",
+            "urutan": 1,
+            "is_active": 1,
+            "created_at": "2026-04-21 23:38:21",
+            "updated_at": "2026-04-21 23:38:21"
+        },
+        {
+            "id": 2,
+            "platform": "YouTube",
+            "url": "https:\/\/www.youtube.com\/channel\/UCJFsTPOTUEcMisoNbk2GvUw",
+            "icon": "fab fa-youtube",
+            "color": "#FF0000",
+            "urutan": 2,
+            "is_active": 1,
+            "created_at": "2026-04-21 23:38:21",
+            "updated_at": "2026-04-21 23:38:21"
+        },
+        {
+            "id": 3,
+            "platform": "Tiktok",
+            "url": "https:\/\/www.tiktok.com\/",
+            "icon": "fa-brands fa-tiktok",
+            "color": "#ffffff",
+            "urutan": 3,
+            "is_active": 1,
+            "created_at": "2026-04-21 23:46:16",
+            "updated_at": "2026-04-21 23:46:16"
+        },
+        {
+            "id": 4,
+            "platform": "Facebook",
+            "url": "https:\/\/www.facebook.com\/",
+            "icon": "fa-brands fa-facebook",
+            "color": "#1877f2",
+            "urutan": 4,
+            "is_active": 1,
+            "created_at": "2026-04-21 23:47:38",
+            "updated_at": "2026-04-21 23:48:46"
+        }
+    ],
+    "landing_misis": [
+        {
+            "id": 1,
+            "misi_text": "Menyelenggarakan dakwah berbasis ketarekatan yang membina spiritualitas, akhlak, dan pengamalan nilai-nilai Shafa’i secara terarah dan berkesinambungan.",
+            "urutan": 1,
+            "is_active": 1,
+            "created_at": "2026-04-22 00:03:00",
+            "updated_at": "2026-04-24 04:23:46"
+        },
+        {
+            "id": 2,
+            "misi_text": "Mengembangkan pendidikan yang berorientasi pada kesatuan ilmu dan amal guna membentuk insan yang berilmu, beradab, dan memberkahi umat.",
+            "urutan": 2,
+            "is_active": 1,
+            "created_at": "2026-04-22 00:03:00",
+            "updated_at": "2026-04-24 04:24:10"
+        },
+        {
+            "id": 3,
+            "misi_text": "Menyelenggarakan pelayanan sosial yang inklusif, berkeadilan, dan berdampak nyata bagi masyarakat.",
+            "urutan": 3,
+            "is_active": 1,
+            "created_at": "2026-04-22 00:03:00",
+            "updated_at": "2026-04-24 04:24:24"
+        },
+        {
+            "id": 4,
+            "misi_text": "Membangun tata kelola yayasan yang profesional, akuntabel, adaptif, dan berbasis penguatan sistem kelembagaan.",
+            "urutan": 4,
+            "is_active": 1,
+            "created_at": "2026-04-24 04:24:35",
+            "updated_at": "2026-04-24 04:24:35"
+        },
+        {
+            "id": 5,
+            "misi_text": "Mengembangkan jejaring kerja sama nasional dan internasional untuk memperluas manfaat, kolaborasi, dan jangkauan program yayasan.",
+            "urutan": 5,
+            "is_active": 1,
+            "created_at": "2026-04-24 04:25:04",
+            "updated_at": "2026-04-24 04:25:04"
+        },
+        {
+            "id": 6,
+            "misi_text": "Menguatkan sumber daya yayasan melalui pengembangan SDM, pengelolaan aset, dan kemandirian pendanaan yang sehat dan berkelanjutan.",
+            "urutan": 6,
+            "is_active": 1,
+            "created_at": "2026-04-24 04:25:27",
+            "updated_at": "2026-04-24 04:25:27"
+        },
+        {
+            "id": 7,
+            "misi_text": "Menjamin keberlanjutan lembaga melalui kaderisasi, penguatan budaya organisasi, dan pengelolaan kelembagaan yang berorientasi jangka panjang.",
+            "urutan": 7,
+            "is_active": 1,
+            "created_at": "2026-04-24 04:25:48",
+            "updated_at": "2026-04-24 04:25:48"
+        }
+    ],
+    "landing_strukturs": [
+        {
+            "id": 1,
+            "jabatan": "Pembina",
+            "nama": "KH. Mohammad Nizam As-Shofa",
+            "deskripsi": "Pengasuh Yayasan",
+            "level": 0,
+            "tipe": "utama",
+            "urutan": 1,
+            "is_active": 1,
+            "created_at": "2026-05-27 14:16:40",
+            "updated_at": "2026-05-27 14:16:40"
+        },
+        {
+            "id": 2,
+            "jabatan": "Dewan Pengawas",
+            "nama": null,
+            "deskripsi": null,
+            "level": 1,
+            "tipe": "staff",
+            "urutan": 2,
+            "is_active": 1,
+            "created_at": "2026-05-27 14:16:40",
+            "updated_at": "2026-05-27 14:16:40"
+        },
+        {
+            "id": 3,
+            "jabatan": "Ketua Umum",
+            "nama": "KH. M. Miftahul Ulum, S.Si.",
+            "deskripsi": "Pengurus Harian",
+            "level": 2,
+            "tipe": "staff",
+            "urutan": 3,
+            "is_active": 1,
+            "created_at": "2026-05-27 14:16:40",
+            "updated_at": "2026-05-27 14:16:40"
+        },
+        {
+            "id": 4,
+            "jabatan": "Ketua I",
+            "nama": "Dr. KH. M. Sutaman Irfany, M.A.",
+            "deskripsi": "Pengurus Harian",
+            "level": 2,
+            "tipe": "staff",
+            "urutan": 4,
+            "is_active": 1,
+            "created_at": "2026-05-27 14:16:40",
+            "updated_at": "2026-05-27 14:16:40"
+        },
+        {
+            "id": 5,
+            "jabatan": "Ketua II",
+            "nama": "H. Arifin S.Sos.",
+            "deskripsi": "Pengurus Harian",
+            "level": 2,
+            "tipe": "staff",
+            "urutan": 5,
+            "is_active": 1,
+            "created_at": "2026-05-27 14:16:40",
+            "updated_at": "2026-05-27 14:16:40"
+        }
+    ],
+    "landing_tentang_features": [
+        {
+            "id": 1,
+            "icon": "fas fa-heart",
+            "title": "Kedalaman Spiritual",
+            "desc": "Membimbing jamaah melalui pendekatan thariqah untuk mencapai kebersihan hati dan kedekatan dengan Sang Khalik.",
+            "urutan": 1,
+            "is_active": 1,
+            "created_at": "2026-04-21 23:38:21",
+            "updated_at": "2026-04-21 23:38:21"
+        },
+        {
+            "id": 2,
+            "icon": "fas fa-mosque",
+            "title": "Majelis & Istighasah",
+            "desc": "Majelis Reboan Agung dan Istighasah As-Shafa sebagai wadah pembinaan ruhani rutin bagi seluruh jamaah.",
+            "urutan": 2,
+            "is_active": 1,
+            "created_at": "2026-04-21 23:38:21",
+            "updated_at": "2026-04-21 23:38:21"
+        },
+        {
+            "id": 3,
+            "icon": "fas fa-hands-helping",
+            "title": "Pengabdian Sosial",
+            "desc": "Program SALIK (Salik Shafa'i) — menampung anak yatim, duafa, dan menyelenggarakan aksi sosial tahunan.",
+            "urutan": 3,
+            "is_active": 1,
+            "created_at": "2026-04-21 23:38:21",
+            "updated_at": "2026-04-21 23:38:21"
+        }
+    ],
+    "landing_hero_slides": [],
+    "landing_sejarahs": [
+        {
+            "id": 1,
+            "tahun": "2002",
+            "judul": "Awal Mula Pengajian",
+            "deskripsi": "Pengajian Rabu Malam yang dihadiri 7 orang jamaah di Desa Simoketawang, menjadi cikal bakal berdirinya pesantren.",
+            "image_path": null,
+            "urutan": 1,
+            "is_active": 1,
+            "created_at": "2026-05-27 13:54:12",
+            "updated_at": "2026-05-27 13:54:12"
+        },
+        {
+            "id": 2,
+            "tahun": "2005",
+            "judul": "Berkembangnya Jamaah",
+            "deskripsi": "Jamaah semakin bertambah hingga ratusan orang. Kegiatan mulai terorganisir dan meluas ke wilayah sekitar Sidoarjo.",
+            "image_path": null,
+            "urutan": 2,
+            "is_active": 1,
+            "created_at": "2026-05-27 13:54:12",
+            "updated_at": "2026-05-27 13:54:12"
+        },
+        {
+            "id": 3,
+            "tahun": "2010",
+            "judul": "Pembangunan Masjid",
+            "deskripsi": "Pembangunan Masjid Jami' Shafa Wafa sebagai pusat ibadah dan kegiatan jamaah yang semakin berkembang.",
+            "image_path": null,
+            "urutan": 3,
+            "is_active": 1,
+            "created_at": "2026-05-27 13:54:12",
+            "updated_at": "2026-05-27 13:54:12"
+        },
+        {
+            "id": 4,
+            "tahun": "2015",
+            "judul": "Pondok Yatim SALIK",
+            "deskripsi": "Didirikan Pondok Yatim Duafa Salik Shafa'i untuk menampung dan membina anak-anak yatim serta kaum duafa.",
+            "image_path": null,
+            "urutan": 4,
+            "is_active": 1,
+            "created_at": "2026-05-27 13:54:12",
+            "updated_at": "2026-05-27 13:54:12"
+        },
+        {
+            "id": 5,
+            "tahun": "2020",
+            "judul": "Ekspansi Korda",
+            "deskripsi": "Pembentukan Korda (Koordinator Daerah) di berbagai kota di Jawa Timur untuk memperluas jangkauan dakwah.",
+            "image_path": null,
+            "urutan": 5,
+            "is_active": 1,
+            "created_at": "2026-05-27 13:54:12",
+            "updated_at": "2026-05-27 13:54:12"
+        },
+        {
+            "id": 6,
+            "tahun": "2026",
+            "judul": "Kepengurusan Baru",
+            "deskripsi": "Pelantikan kepengurusan Yayasan masa khidmah 2026-2031 dengan struktur organisasi yang lebih solid.",
+            "image_path": null,
+            "urutan": 6,
+            "is_active": 1,
+            "created_at": "2026-05-27 13:54:12",
+            "updated_at": "2026-05-27 13:54:12"
+        }
+    ]
+}
