@@ -52,6 +52,39 @@ if (isFirebaseConfigured) {
 
 export { auth, db, storage };
 
+// SIMAYA SYSTEM COLLECTIONS (no seed fallback - live data)
+export const SYSTEM_COLLECTIONS = {
+  USERS: 'users',
+  EVENTS: 'events',
+  REGISTRATIONS: 'eventRegistrations',
+  DONATIONS: 'donations',
+  PAYMENT_METHODS: 'paymentMethods',
+  COST_CENTERS: 'costCenters',
+  EVENT_CATEGORIES: 'eventCategories',
+};
+
+// HELPER: Fetch live collection (no seed fallback)
+export async function getLiveCollection(collectionName, orderField = 'createdAt', orderDir = 'desc') {
+  if (!isFirebaseConfigured || !db) return [];
+  try {
+    let q;
+    if (orderField) {
+      q = query(collection(db, collectionName), orderBy(orderField, orderDir));
+    } else {
+      q = query(collection(db, collectionName));
+    }
+    const snapshot = await getDocs(q);
+    const data = [];
+    snapshot.forEach(docSnap => {
+      data.push({ id: docSnap.id, ...docSnap.data() });
+    });
+    return data;
+  } catch (error) {
+    console.error(`Error fetching ${collectionName}:`, error);
+    return [];
+  }
+}
+
 // HELPER FUNCTION: Fetch Collection with local fallback
 export async function getCollectionData(collectionName, defaultTable) {
   if (!isFirebaseConfigured || !db) {
@@ -180,4 +213,126 @@ export async function seedFirestoreDatabase() {
     console.error("Failed to seed Firestore:", error);
     throw error;
   }
+}
+
+// ==================== SIMAYA SYSTEM HELPERS ====================
+
+// --- USERS ---
+export async function createUserProfile(uid, data) {
+  if (!db) throw new Error('Firebase not configured');
+  await setDoc(doc(db, SYSTEM_COLLECTIONS.USERS, uid), { ...data, createdAt: new Date().toISOString() });
+}
+
+export async function updateUserRole(uid, role, permissions = []) {
+  if (!db) throw new Error('Firebase not configured');
+  await updateDoc(doc(db, SYSTEM_COLLECTIONS.USERS, uid), { role, permissions, updatedAt: new Date().toISOString() });
+}
+
+export async function getAllUserProfiles() {
+  return getLiveCollection(SYSTEM_COLLECTIONS.USERS);
+}
+
+// --- EVENTS ---
+export async function createEvent(data) {
+  if (!db) throw new Error('Firebase not configured');
+  const docRef = await addDoc(collection(db, SYSTEM_COLLECTIONS.EVENTS), { ...data, createdAt: new Date().toISOString() });
+  return docRef.id;
+}
+
+export async function updateEvent(eventId, data) {
+  if (!db) throw new Error('Firebase not configured');
+  await updateDoc(doc(db, SYSTEM_COLLECTIONS.EVENTS, eventId), { ...data, updatedAt: new Date().toISOString() });
+}
+
+export async function deleteEvent(eventId) {
+  if (!db) throw new Error('Firebase not configured');
+  await deleteDoc(doc(db, SYSTEM_COLLECTIONS.EVENTS, eventId));
+}
+
+export async function getAllEvents() {
+  return getLiveCollection(SYSTEM_COLLECTIONS.EVENTS, 'startDate', 'asc');
+}
+
+// --- EVENT REGISTRATIONS ---
+export async function registerForEvent(userId, eventId, data) {
+  if (!db) throw new Error('Firebase not configured');
+  const docRef = await addDoc(collection(db, SYSTEM_COLLECTIONS.REGISTRATIONS), {
+    userId, eventId, ...data, status: 'pending', registeredAt: new Date().toISOString(),
+  });
+  return docRef.id;
+}
+
+export async function approveRegistration(regId, approvedBy) {
+  if (!db) throw new Error('Firebase not configured');
+  await updateDoc(doc(db, SYSTEM_COLLECTIONS.REGISTRATIONS, regId), {
+    status: 'approved', approvedBy, approvedAt: new Date().toISOString(),
+  });
+}
+
+export async function rejectRegistration(regId, rejectedBy, reason = '') {
+  if (!db) throw new Error('Firebase not configured');
+  await updateDoc(doc(db, SYSTEM_COLLECTIONS.REGISTRATIONS, regId), {
+    status: 'rejected', rejectedBy, reason, rejectedAt: new Date().toISOString(),
+  });
+}
+
+export async function getRegistrationsByEvent(eventId) {
+  return getLiveCollection(SYSTEM_COLLECTIONS.REGISTRATIONS);
+}
+
+// --- DONATIONS ---
+export async function createDonation(data) {
+  if (!db) throw new Error('Firebase not configured');
+  const docRef = await addDoc(collection(db, SYSTEM_COLLECTIONS.DONATIONS), {
+    ...data, status: 'pending', submittedAt: new Date().toISOString(),
+  });
+  return docRef.id;
+}
+
+export async function verifyDonation(donId, verifiedBy) {
+  if (!db) throw new Error('Firebase not configured');
+  await updateDoc(doc(db, SYSTEM_COLLECTIONS.DONATIONS, donId), {
+    status: 'verified', verifiedBy, verifiedAt: new Date().toISOString(),
+  });
+}
+
+export async function rejectDonation(donId, rejectedBy, reason = '') {
+  if (!db) throw new Error('Firebase not configured');
+  await updateDoc(doc(db, SYSTEM_COLLECTIONS.DONATIONS, donId), {
+    status: 'rejected', rejectedBy, reason, rejectedAt: new Date().toISOString(),
+  });
+}
+
+export async function getAllDonations() {
+  return getLiveCollection(SYSTEM_COLLECTIONS.DONATIONS, 'submittedAt', 'desc');
+}
+
+// --- PAYMENT METHODS ---
+export async function createPaymentMethod(data) {
+  if (!db) throw new Error('Firebase not configured');
+  await addDoc(collection(db, SYSTEM_COLLECTIONS.PAYMENT_METHODS), { ...data, isActive: true });
+}
+
+export async function getAllPaymentMethods() {
+  return getLiveCollection(SYSTEM_COLLECTIONS.PAYMENT_METHODS);
+}
+
+// --- COST CENTERS ---
+export async function createCostCenter(data) {
+  if (!db) throw new Error('Firebase not configured');
+  await addDoc(collection(db, SYSTEM_COLLECTIONS.COST_CENTERS), { ...data, isActive: true });
+}
+
+export async function getAllCostCenters() {
+  return getLiveCollection(SYSTEM_COLLECTIONS.COST_CENTERS);
+}
+
+// --- EVENT CATEGORIES ---
+export async function createEventCategory(data) {
+  if (!db) throw new Error('Firebase not configured');
+  await addDoc(collection(db, SYSTEM_COLLECTIONS.EVENT_CATEGORIES), { ...data, isActive: true });
+}
+
+export async function getAllEventCategories() {
+  return getLiveCollection(SYSTEM_COLLECTIONS.EVENT_CATEGORIES);
 }

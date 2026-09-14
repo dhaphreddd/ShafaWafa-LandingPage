@@ -21,6 +21,10 @@ import {
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 import { formatImageUrl } from "../utils/imageHelper";
+import { getAllUsers, hasPermission, isSuperAdmin } from "../utils/roleHelper";
+import RoleManager from "./RoleManager";
+import { getAllEvents, getAllDonations, getLiveCollection } from "../firebase";
+import { SYSTEM_COLLECTIONS } from "../firebase";
 
 // Import styling
 import "../styles/admin-styles.css";
@@ -45,6 +49,13 @@ export default function Dashboard() {
   const [galeriEvents, setGaleriEvents] = useState([]);
   const [videos, setVideos] = useState([]);
   const [sosials, setSosials] = useState([]);
+  // SIMAYA system data
+  const [systemUsers, setSystemUsers] = useState([]);
+  const [systemEvents, setSystemEvents] = useState([]);
+  const [systemRegistrations, setSystemRegistrations] = useState([]);
+  const [systemDonations, setSystemDonations] = useState([]);
+  const [paymentMethods, setPaymentMethods] = useState([]);
+  const [costCenters, setCostCenters] = useState([]);
 
   // Editor states (for add/edit modals)
   const [editingItem, setEditingItem] = useState(null);
@@ -87,6 +98,14 @@ export default function Dashboard() {
       setGaleriEvents(await getCollectionData("galeriEvents", "landing_galeri_events"));
       setVideos(await getCollectionData("videos", "landing_videos"));
       setSosials(await getCollectionData("sosials", "landing_sosials"));
+
+      // SIMAYA system data
+      setSystemUsers(await getAllUsers());
+      setSystemEvents(await getAllEvents());
+      setSystemRegistrations(await getLiveCollection(SYSTEM_COLLECTIONS.REGISTRATIONS, 'registeredAt', 'desc'));
+      setSystemDonations(await getAllDonations());
+      setPaymentMethods(await getLiveCollection(SYSTEM_COLLECTIONS.PAYMENT_METHODS));
+      setCostCenters(await getLiveCollection(SYSTEM_COLLECTIONS.COST_CENTERS));
     } catch (error) {
       console.error("Failed to load CMS data:", error);
       showMsg("error", "Gagal memuat beberapa data dari database.");
@@ -751,6 +770,26 @@ export default function Dashboard() {
           <div className="nav-item">
             <button className={`nav-link-cms ${activeTab === "lokasi" ? "active" : ""}`} onClick={() => setActiveTab("lokasi")}>
               <i className="fas fa-map-marker-alt"></i><span className="nav-text">Lokasi & Sosial</span>
+            </button>
+          </div>
+          <div className="nav-item">
+            <button className={`nav-link-cms ${activeTab === "roles" ? "active" : ""}`} onClick={() => setActiveTab("roles")}>
+              <i className="fas fa-user-shield"></i><span className="nav-text">Role Manager</span>
+            </button>
+          </div>
+          <div className="nav-item">
+            <button className={`nav-link-cms ${activeTab === "events" ? "active" : ""}`} onClick={() => setActiveTab("events")}>
+              <i className="fas fa-calendar"></i><span className="nav-text">Kegiatan SIMAYA</span>
+            </button>
+          </div>
+          <div className="nav-item">
+            <button className={`nav-link-cms ${activeTab === "registrations" ? "active" : ""}`} onClick={() => setActiveTab("registrations")}>
+              <i className="fas fa-clipboard-list"></i><span className="nav-text">Registrasi</span>
+            </button>
+          </div>
+          <div className="nav-item">
+            <button className={`nav-link-cms ${activeTab === "donations" ? "active" : ""}`} onClick={() => setActiveTab("donations")}>
+              <i className="fas fa-hand-holding-heart"></i><span className="nav-text">Donasi</span>
             </button>
           </div>
         </div>
@@ -1527,6 +1566,176 @@ export default function Dashboard() {
             </div>
           )}
 
+          {/* ═══════════════════ TAB ROLE MANAGER ═══════════════════ */}
+          {activeTab === "roles" && (
+            <div>
+              <RoleManager />
+            </div>
+          )}
+
+          {/* ═══════════════════ TAB EVENTS SIMAYA ═══════════════════ */}
+          {activeTab === "events" && (
+            <div className="space-y-4">
+              {/* Create Event */}
+              <div className="cms-card mb-4">
+                <div className="cms-card-header justify-content-between">
+                  <div className="d-flex align-items-center gap-3">
+                    <div className="cms-card-icon"><i className="fas fa-calendar-plus"></i></div>
+                    <div>
+                      <h5>Buat Kegiatan SIMAYA</h5>
+                      <small className="text-secondary">Kegiatan organisasi internal</small>
+                    </div>
+                  </div>
+                  <button type="button" onClick={() => { setEditingItem({}); setModalType("add"); setModalOpen(true); }} className="btn btn-sm btn-cms-save py-2 px-3">+ Tambah Kegiatan</button>
+                </div>
+              </div>
+
+              {/* Kegiatan List CRUD */}
+              <div className="cms-card">
+                <div className="cms-card-header justify-content-between">
+                  <div className="d-flex align-items-center gap-3">
+                    <div className="cms-card-icon"><i className="fas fa-list"></i></div>
+                    <div>
+                      <h5>Daftar Kegiatan SIMAYA</h5>
+                      <small className="text-secondary">Total: {systemEvents.length} kegiatan</small>
+                    </div>
+                  </div>
+                  <button type="button" onClick={() => { setEditingItem({}); setModalType("add"); setModalOpen(true); }} className="btn btn-sm btn-cms-save py-2 px-3">+ Tambah</button>
+                </div>
+
+                <div className="crud-list">
+                  {systemEvents.map(item => (
+                    <div key={item.id} className="crud-item">
+                      <div className="crud-info">
+                        <div className="d-flex align-items-center gap-2">
+                          <span className="badge-cms" style={{ background: item.level === undefined ? "rgba(232,201,110,0.15)" : "rgba(100,255,218,0.15)", color: item.level === undefined ? "#e8c96e" : "#64ffda" }}>{item.title}</span>
+                          {item.is_active !== false && <span className="badge-inactive">Aktif</span>}
+                        </div>
+                        <div className="crud-meta mt-1"><i className="fas fa-clock me-1"></i> {item.jadwal || "-"} {item.startDate || ""}</div>
+                      </div>
+                      <div className="crud-actions">
+                        <button type="button" className="btn-crud-edit" onClick={() => { setEditingItem(item); setModalType("edit"); setModalOpen(true); }}>Edit</button>
+                        <button type="button" className="btn-crud-delete" onClick={() => deleteEvent(item.id)}><i className="fas fa-trash"></i></button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* ═══════════════════ TAB REGISTRATIONS ═══════════════════ */}
+          {activeTab === "registrations" && (
+            <div className="space-y-4">
+              {/* Registration Stats */}
+              <div className="cms-card mb-4">
+                <div className="cms-card-header justify-content-between">
+                  <div className="d-flex align-items-center gap-3">
+                    <div className="cms-card-icon"><i className="fas fa-clipboard-check"></i></div>
+                    <div>
+                      <h5>Statistik Registrasi</h5>
+                      <small className="text-secondary">Total peserta</small>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm">Menunggu Persetujuan: {systemRegistrations.filter(r => r.status === 'pending').length}</p>
+                  <p className="text-sm">Disetujui: {systemRegistrations.filter(r => r.status === 'approved').length}</p>
+                  <p className="text-sm">Ditolak: {systemRegistrations.filter(r => r.status === 'rejected').length}</p>
+                </div>
+              </div>
+
+              {/* Registration List */}
+              <div className="cms-card">
+                <div className="cms-card-header justify-content-between">
+                  <div className="d-flex align-items-center gap-3">
+                    <div className="cms-card-icon"><i className="fas fa-list-ol"></i></div>
+                    <div>
+                      <h5>Daftar Registrasi</h5>
+                      <small className="text-secondary">Total: {systemRegistrations.length} entri</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="crud-list">
+                  {systemRegistrations.map(reg => (
+                    <div key={reg.id} className="crud-item align-items-start" style={{ padding: "20px" }}>
+                      <div className="crud-thumb" style={{ width: "100px", height: "80px", borderRadius: "8px", overflow: "hidden", background: "rgba(0,0,0,0.3)" }}>
+                        {reg.userId ? <img src="https://ui-avatars.com/api/?name=${reg.userId}&background=random" alt="User" style={{ width: "100%", height: "100%", objectFit: "cover" }} /> : <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%", color: "rgba(255,255,255,0.2)", fontSize: "14px" }}>User</div>}
+                      </div>
+                      <div className="crud-info ms-3">
+                        <p className="text-xs text-muted">Event: <span className="font-semibold">{reg.eventId ? `Kegiatan ${reg.eventId}` : 'Unknown'}</span></p>
+                        <p className="text-xs text-muted">Status: <span className={`badge-cms ${reg.status === 'approved' ? 'bg-green-500/20 text-green-400 border-green-500/40' : reg.status === 'rejected' ? 'bg-red-500/20 text-red-400 border-red-500/40' : 'bg-yellow-500/20 text-yellow-400 border-yellow-500/40'}`}>{reg.status}</span></p>
+                        <p className="text-xs text-muted">Tanggal: {new Date(reg.registeredAt).toLocaleDateString('id-ID')}</p>
+                      </div>
+                      <div className="crud-actions">
+                        <button type="button" className="btn-crud-edit">Edit</button>
+                        <button type="button" className="btn-crud-delete" onClick={() => approveRegistration(reg.id)}><i className="fas fa-check-circle text-green-400"></i></button>
+                        <button type="button" className="btn-crud-delete" onClick={() => rejectRegistration(reg.id)}><i className="fas fa-times-circle text-red-400"></i></button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* ═══════════════════ TAB DONATIONS ═══════════════════ */}
+          {activeTab === "donations" && (
+            <div className="space-y-4">
+              {/* Donation Stats */}
+              <div className="cms-card mb-4">
+                <div className="cms-card-header justify-content-between">
+                  <div className="d-flex align-items-center gap-3">
+                    <div className="cms-card-icon"><i className="fas fa-hand-holding-usd"></i></div>
+                    <div>
+                      <h5>Statistik Donasi</h5>
+                      <small className="text-secondary">Total donasi</small>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm">Pending Verifikasi: {systemDonations.filter(d => d.status === 'pending').length}</p>
+                  <p className="text-sm">Terverifikasi: {systemDonations.filter(d => d.status === 'verified').length}</p>
+                  <p className="text-sm">Ditolak: {systemDonations.filter(d => d.status === 'rejected').length}</p>
+                </div>
+              </div>
+
+              {/* Donation List */}
+              <div className="cms-card">
+                <div className="cms-card-header justify-content-between">
+                  <div className="d-flex align-items-center gap-3">
+                    <div className="cms-card-icon"><i className="fas fa-list-ol"></i></div>
+                    <div>
+                      <h5>Daftar Donasi</h5>
+                      <small className="text-secondary">Total: {systemDonations.length} entri</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="crud-list">
+                  {systemDonations.map(d => (
+                    <div key={d.id} className="crud-item align-items-start" style={{ padding: "20px" }}>
+                      <div className="crud-thumb" style={{ width: "100px", height: "80px", borderRadius: "8px", overflow: "hidden", background: "rgba(0,0,0,0.3)" }}>
+                        {d.proofImageUrl ? <img src={d.proofImageUrl} alt="Bukti Transfer" style={{ width: "100%", height: "100%", objectFit: "cover" }} /> : <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%", color: "rgba(255,255,255,0.2)", fontSize: "14px" }}>No Bukti</div>}
+                      </div>
+                      <div className="crud-info ms-3">
+                        <p className="text-xs text-muted">Amount: <span className="font-semibold">Rp {Number(d.amount).toLocaleString('id-ID')}</span></p>
+                        <p className="text-xs text-muted">Metode: <span className="font-semibold">{d.paymentMethod || '-'}</span></p>
+                        <p className="text-xs text-muted">Pusat Biaya: <span className="font-semibold">{d.costCenter || '-'}</span></p>
+                        <p className="text-xs text-muted">Tanggal: {new Date(d.submittedAt).toLocaleDateString('id-ID')}</p>
+                      </div>
+                      <div className="crud-actions">
+                        <button type="button" className="btn-crud-edit">Edit</button>
+                        <button type="button" className="btn-crud-delete" onClick={() => verifyDonation(d.id)}><i className="fas fa-check-circle text-green-400"></i></button>
+                        <button type="button" className="btn-crud-delete" onClick={() => rejectDonation(d.id)}><i className="fas fa-times-circle text-red-400"></i></button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
 
       </div>

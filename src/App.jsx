@@ -10,6 +10,16 @@ import Galeri from "./pages/Galeri";
 import Login from "./admin/Login";
 import Dashboard from "./admin/Dashboard";
 
+// Member Portal Routes
+import MemberLogin from "./jamaah/Login";
+import MemberRegister from "./jamaah/Register";
+import MemberDashboard from "./jamaah/Dashboard";
+import MemberProfile from "./jamaah/Profile";
+import MemberEvents from "./jamaah/Events";
+import MemberMyEvents from "./jamaah/MyEvents";
+import MemberDonations from "./jamaah/Donations";
+import MemberDonationHistory from "./jamaah/DonationHistory";
+
 // Import styling
 import "./styles/front-styles.css";
 
@@ -68,6 +78,16 @@ export default function App() {
             </Layout>
           } 
         />
+
+        {/* Member Portal Routes */}
+        <Route path="/jamaah/login" element={<MemberLogin />} />
+        <Route path="/jamaah/register" element={<MemberRegister />} />
+        <Route path="/jamaah/dashboard" element={<MemberDashboard />} />
+        <Route path="/jamaah/profile" element={<MemberProfile />} />
+        <Route path="/jamaah/events" element={<MemberEvents />} />
+        <Route path="/jamaah/my-events" element={<MemberMyEvents />} />
+        <Route path="/jamaah/donations" element={<MemberDonations />} />
+        <Route path="/jamaah/donation-history" element={<MemberDonationHistory />} />
 
         {/* Admin CMS Routes (No global layout wrapper) */}
         <Route path="/admin" element={<Login />} />
