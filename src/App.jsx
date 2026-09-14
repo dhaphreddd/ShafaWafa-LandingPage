@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { HashRouter, Routes, Route } from "react-router-dom";
-import { getSiteSettings } from "./firebase";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
+import { getSiteSettings, auth } from "./firebase";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Profil from "./pages/Profil";
 import Kegiatan from "./pages/Kegiatan";
 import Artikel from "./pages/Artikel";
 import Galeri from "./pages/Galeri";
+
+// Admin Routes
 import Login from "./admin/Login";
-import Dashboard from "./admin/Dashboard";
+import LandingPageCMS from "./admin/LandingPageCMS";
+import SimayaDashboard from "./admin/SimayaDashboard";
 
 // Member Portal Routes
 import MemberLogin from "./jamaah/Login";
@@ -79,6 +82,12 @@ export default function App() {
           } 
         />
 
+        {/* Admin Routes */}
+        <Route path="/admin/login" element={<Login />} />
+        <Route path="/admin" element={<LandingPageCMS />} />
+        <Route path="/admin/cms" element={<LandingPageCMS />} />
+        <Route path="/admin/simaya" element={<SimayaDashboard />} />
+
         {/* Member Portal Routes */}
         <Route path="/jamaah/login" element={<MemberLogin />} />
         <Route path="/jamaah/register" element={<MemberRegister />} />
@@ -89,9 +98,8 @@ export default function App() {
         <Route path="/jamaah/donations" element={<MemberDonations />} />
         <Route path="/jamaah/donation-history" element={<MemberDonationHistory />} />
 
-        {/* Admin CMS Routes (No global layout wrapper) */}
-        <Route path="/admin" element={<Login />} />
-        <Route path="/admin/dashboard" element={<Dashboard />} />
+        {/* Fallback */}
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </HashRouter>
   );

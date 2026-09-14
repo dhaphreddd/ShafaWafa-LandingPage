@@ -39,7 +39,7 @@ export default function Login() {
 
   useEffect(() => {
     if (auth) {
-      const unsub = onAuthStateChanged(auth, (u) => { if (u) navigate("/admin/dashboard"); });
+      const unsub = onAuthStateChanged(auth, (u) => { if (u) navigate("/admin/simaya"); });
       return unsub;
     }
   }, [navigate]);
@@ -56,7 +56,7 @@ export default function Login() {
     setError("");
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/admin/dashboard");
+      navigate("/admin/simaya");
     } catch (err) {
       console.error(err);
       setError("Email atau password salah, atau gagal menghubungi server.");
