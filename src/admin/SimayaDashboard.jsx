@@ -1,28 +1,33 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { auth, getAllEvents, getAllDonations, getLiveCollection, SYSTEM_COLLECTIONS } from "../firebase";
+import { useNavigate, Link } from "react-router-dom";
+import { auth } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
-import { formatImageUrl } from "../utils/imageHelper";
+import { getAllUsers, ROLES } from "../utils/roleHelper";
 import RoleManager from "./RoleManager";
+import { getAllEvents, getAllDonations, getLiveCollection } from "../firebase";
+import { SYSTEM_COLLECTIONS } from "../firebase";
+import { formatImageUrl } from "../utils/imageHelper";
 import "../styles/admin-styles.css";
 
 export default function SimayaDashboard() {
   const [activeTab, setActiveTab] = useState("events");
-  const [events, setEvents] = useState([]);
-  const [registrations, setRegistrations] = useState([]);
-  const [donations, setDonations] = useState([]);
+  const [systemUsers, setSystemUsers] = useState([]);
+  const [systemEvents, setSystemEvents] = useState([]);
+  const [systemRegistrations, setSystemRegistrations] = useState([]);
+  const [systemDonations, setSystemDonations] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, (u) => { if (!u) navigate("/admin"); });
+    const unsub = onAuthStateChanged(auth, (u) => { if (!u) navigate("/admin/simaya"); });
     loadData();
     return unsub;
   }, [navigate]);
 
   const loadData = async () => {
-    setEvents(await getAllEvents());
-    setRegistrations(await getLiveCollection(SYSTEM_COLLECTIONS.REGISTRATIONS));
-    setDonations(await getAllDonations());
+    setSystemUsers(await getAllUsers());
+    setSystemEvents(await getAllEvents());
+    setSystemRegistrations(await getLiveCollection(SYSTEM_COLLECTIONS.REGISTRATIONS));
+    setSystemDonations(await getAllDonations());
   };
 
   return (
@@ -35,7 +40,7 @@ export default function SimayaDashboard() {
         <div className="nav-menu">
            <div className="nav-item">
              <button className={`nav-link-cms ${activeTab === "events" ? "active" : ""}`} onClick={() => setActiveTab("events")}>
-               <i className="fas fa-calendar"></i><span className="nav-text">Kegiatan SIMAYA</span>
+               <i className="fas fa-calendar-alt"></i><span className="nav-text">Kegiatan SIMAYA</span>
              </button>
            </div>
            <div className="nav-item">
@@ -55,17 +60,17 @@ export default function SimayaDashboard() {
            </div>
            <div className="nav-item mt-4 border-t border-white/10 pt-2">
              <button className="nav-link-cms text-warning" onClick={() => navigate("/admin/cms")}>
-                <i className="fas fa-globe"></i> Kelola CMS Landing
+                <i className="fas fa-globe"></i> CMS Landing
              </button>
            </div>
         </div>
       </div>
       <div className="main-content p-6 text-white">
-         <h1 className="text-2xl font-bold mb-4">Sistem Manajemen Yayasan (SIMAYA): {activeTab.toUpperCase()}</h1>
+         <h1 className="text-2xl font-bold mb-4">SIMAYA: {activeTab.toUpperCase()}</h1>
+         {activeTab === "events" && <div>Kegiatan SIMAYA: {systemEvents.length} events</div>}
+         {activeTab === "registrations" && <div>Registrasi: {systemRegistrations.length} entri</div>}
+         {activeTab === "donations" && <div>Donasi: {systemDonations.length} entri</div>}
          {activeTab === "roles" && <RoleManager />}
-         {activeTab === "events" && <div>Total Kegiatan: {events.length}</div>}
-         {activeTab === "registrations" && <div>Total Pendaftar: {registrations.length}</div>}
-         {activeTab === "donations" && <div>Total Donasi: {donations.length}</div>}
       </div>
     </div>
   );
