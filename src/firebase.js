@@ -215,6 +215,101 @@ export async function seedFirestoreDatabase() {
   }
 }
 
+// ==================== SIMAYA DATABASE SEED ====================
+
+export async function seedSimayaDatabase() {
+  if (!isFirebaseConfigured || !db) {
+    throw new Error("Firebase is not configured. Cannot seed SIMAYA data.");
+  }
+
+  try {
+    // 1. Create default admin user (if not exists)
+    const superAdminId = "superadmin_001";
+    const adminRef = doc(db, "users", superAdminId);
+    const adminSnap = await getDoc(adminRef);
+    if (!adminSnap.exists()) {
+      await setDoc(adminRef, {
+        name: "Super Admin",
+        email: "superadmin@simaya.id",
+        role: "superadmin",
+        status: "active",
+        permissions: ["*"],
+        createdAt: new Date().toISOString()
+      });
+      console.log("✓ Created superadmin user");
+    }
+
+    // 2. Create payment methods
+    const paymentMethods = [
+      { id: "pm001", name: "Bank BCA", accountNumber: "1234567890", accountName: "Yayasan Ahlus Shafa Wal Wafa", isActive: true },
+      { id: "pm002", name: "Bank Mandiri", accountNumber: "9876543210", accountName: "Yayasan Ahlus Shafa Wal Wafa", isActive: true },
+      { id: "pm003", name: "QRIS", qrCode: "simaya_qr.png", isActive: true }
+    ];
+    for (const pm of paymentMethods) {
+      const ref = doc(db, "paymentMethods", pm.id);
+      const snap = await getDoc(ref);
+      if (!snap.exists()) await setDoc(ref, pm);
+    }
+    console.log("✓ Created payment methods");
+
+    // 3. Create cost centers
+    const costCenters = [
+      { id: "cc001", name: "Umum", code: "UMUM", isActive: true },
+      { id: "cc002", name: "Pendidikan", code: "PEND", isActive: true },
+      { id: "cc003", name: "Sosial", code: "SOSIAL", isActive: true },
+      { id: "cc004", name: "Pembangunan", code: "BANG", isActive: true }
+    ];
+    for (const cc of costCenters) {
+      const ref = doc(db, "costCenters", cc.id);
+      const snap = await getDoc(ref);
+      if (!snap.exists()) await setDoc(ref, cc);
+    }
+    console.log("✓ Created cost centers");
+
+    // 4. Create sample events
+    const events = [
+      { id: "evt001", title: "Majelis Reboan Agung", description: "Pengajian rutin setiap Rabu malam", startDate: "2026-09-17", endDate: "2026-09-17", jadwal: "Setiap Rabu Malam", status: "aktif", is_active: true },
+      { id: "evt002", title: "Istighasah As-Shafa", description: "Doa bersama untuk keberkahan", startDate: "2026-09-18", endDate: "2026-09-18", jadwal: "Jumat Wage", status: "aktif", is_active: true }
+    ];
+    for (const evt of events) {
+      const ref = doc(db, "events", evt.id);
+      const snap = await getDoc(ref);
+      if (!snap.exists()) await setDoc(ref, evt);
+    }
+    console.log("✓ Created sample events");
+
+    // 5. Create sample registrations
+    const registrations = [
+      { id: "reg001", eventId: "evt001", userId: "user001", status: "pending", registeredAt: new Date().toISOString() },
+      { id: "reg002", eventId: "evt002", userId: "user002", status: "approved", registeredAt: new Date().toISOString() }
+    ];
+    for (const reg of registrations) {
+      const ref = doc(db, "eventRegistrations", reg.id);
+      const snap = await getDoc(ref);
+      if (!snap.exists()) await setDoc(ref, reg);
+    }
+    console.log("✓ Created sample registrations");
+
+    // 6. Create sample donations
+    const donations = [
+      { id: "don001", userId: "user001", amount: 250000, method: "Bank BCA", costCenter: "cc001", status: "verified", submittedAt: "2026-09-10" },
+      { id: "don002", userId: "user002", amount: 100000, method: "QRIS", costCenter: "cc003", status: "pending", submittedAt: "2026-09-12" },
+      { id: "don003", userId: "user003", amount: 500000, method: "Bank Mandiri", costCenter: "cc004", status: "rejected", submittedAt: "2026-09-08" }
+    ];
+    for (const don of donations) {
+      const ref = doc(db, "donations", don.id);
+      const snap = await getDoc(ref);
+      if (!snap.exists()) await setDoc(ref, don);
+    }
+    console.log("✓ Created sample donations");
+
+    return true;
+  } catch (error) {
+    console.error("Failed to seed SIMAYA database:", error);
+    throw error;
+  }
+}
+
 // ==================== SIMAYA SYSTEM HELPERS ====================
 
 // --- USERS ---
