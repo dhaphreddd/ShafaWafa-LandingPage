@@ -83,8 +83,7 @@ export default function App() {
         />
 
         {/* Admin Routes */}
-        <Route path="/admin/login" element={<Login />} />
-        <Route path="/admin" element={<LandingPageCMS />} />
+        <Route path="/admin" element={<Login />} />
         <Route path="/admin/cms" element={<LandingPageCMS />} />
         <Route path="/admin/simaya" element={<SimayaDashboard />} />
 

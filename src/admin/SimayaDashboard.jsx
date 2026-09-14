@@ -18,8 +18,10 @@ export default function SimayaDashboard() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, (u) => { if (!u) navigate("/admin/simaya"); });
-    loadData();
+    const unsub = onAuthStateChanged(auth, (u) => {
+      if (!u) navigate("/admin");
+      else loadData();
+    });
     return unsub;
   }, [navigate]);
 
