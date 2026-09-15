@@ -8,7 +8,9 @@ import {
 import { formatImageUrl } from "../utils/imageHelper";
 import { getAllUsers, ROLES } from "../utils/roleHelper";
 import { logAudit } from "../utils/auditLogger";
+import { notifyRegistrationStatus, notifyDonationStatus, createNotification } from "../utils/notificationHelper";
 import RoleManager from "./RoleManager";
+import NotificationBell from "./NotificationBell";
 import "../styles/admin-styles.css";
 
 const SIMAYA_TABS = [
@@ -101,6 +103,14 @@ export default function SimayaDashboard() {
     try {
       await updateDoc(doc(db, coll, id), { status: newStatus, ...extra, updatedAt: new Date().toISOString() });
       if (user) await logAudit(user.uid, 'update', coll, id, { status: oldItem?.status }, { status: newStatus, ...extra });
+      // Send notifications based on collection type
+      if (coll === "eventRegistrations" && oldItem) {
+        await notifyRegistrationStatus(oldItem.userId, oldItem.event || oldItem.eventId || "Kegiatan", newStatus);
+      } else if (coll === "donations" && oldItem) {
+        await notifyDonationStatus(oldItem.userId, oldItem.amount, newStatus);
+      } else if (coll === "users" && oldItem) {
+        await createNotification(oldItem.id, "Status Akun", `Status akun Anda telah diubah menjadi: ${newStatus}`, "general", "/jamaah/dashboard");
+      }
       showMsg("success", "Status diperbarui!");
       await fetchAllData();
     } catch (e) { showMsg("error", "Gagal update status: " + e.message); }
@@ -242,9 +252,12 @@ export default function SimayaDashboard() {
               </button>
             </div>
           </div>
-          <button onClick={handleLogout} className="btn btn-sm btn-danger px-3 py-2" style={{ borderRadius: "50px", background: "linear-gradient(135deg, #ef4444, #dc2626)", border: "none", fontSize: "12px", fontWeight: 600 }}>
-            <i className="fas fa-sign-out-alt me-1"></i> Keluar
-          </button>
+          <div className="d-flex align-items-center gap-2">
+            <NotificationBell />
+            <button onClick={handleLogout} className="btn btn-sm btn-danger px-3 py-2" style={{ borderRadius: "50px", background: "linear-gradient(135deg, #ef4444, #dc2626)", border: "none", fontSize: "12px", fontWeight: 600 }}>
+              <i className="fas fa-sign-out-alt me-1"></i> Keluar
+            </button>
+          </div>
         </div>
 
         <div className="container-fluid py-4" style={{ paddingLeft: "30px", paddingRight: "30px" }}>
