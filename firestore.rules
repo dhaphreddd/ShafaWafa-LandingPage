@@ -1,0 +1,68 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    function getUserData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+    
+    function isAdmin() {
+      return isSignedIn() && (getUserData().role == 'admin' || getUserData().role == 'superadmin');
+    }
+    
+    function isSuperAdmin() {
+      return isSignedIn() && getUserData().role == 'superadmin';
+    }
+
+    // Public read for landing page content
+    match /settings/{docId} { allow read: if true; allow write: if isAdmin(); }
+    match /heroStats/{docId} { allow read: if true; allow write: if isAdmin(); }
+    match /nilais/{docId} { allow read: if true; allow write: if isAdmin(); }
+    match /kegiatans/{docId} { allow read: if true; allow write: if isAdmin(); }
+    match /artikels/{docId} { allow read: if true; allow write: if isAdmin(); }
+    match /galeriEvents/{docId} { allow read: if true; allow write: if isAdmin(); }
+    match /videos/{docId} { allow read: if true; allow write: if isAdmin(); }
+    match /sosials/{docId} { allow read: if true; allow write: if isAdmin(); }
+    match /misis/{docId} { allow read: if true; allow write: if isAdmin(); }
+    match /strukturs/{docId} { allow read: if true; allow write: if isAdmin(); }
+    match /sejarahs/{docId} { allow read: if true; allow write: if isAdmin(); }
+    match /tentangFeatures/{docId} { allow read: if true; allow write: if isAdmin(); }
+
+    // Users
+    match /users/{userId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn();
+      allow update: if request.auth.uid == userId || isAdmin();
+      allow delete: if isSuperAdmin();
+    }
+
+    // Events & System
+    match /events/{eventId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /eventRegistrations/{regId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn();
+      allow update: if isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    match /donations/{donationId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn();
+      allow update: if isAdmin();
+      allow delete: if isSuperAdmin();
+    }
+
+    match /auditLogs/{logId} {
+      allow read: if isSuperAdmin();
+      allow create: if isSignedIn();
+    }
+  }
+}
