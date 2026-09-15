@@ -1,0 +1,35 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      // Public read access for all files
+      allow read: if true;
+      
+      // Write access for authenticated users only
+      allow write: if request.auth != null
+                   && request.resource.size < 10 * 1024 * 1024  // Max 10MB
+                   && request.resource.contentType.matches('image/.*|video/.*|application/pdf');
+    }
+    
+    match /media/{folder}/{fileName} {
+      allow read: if true;
+      allow write: if request.auth != null
+                   && request.resource.size < 10 * 1024 * 1024;
+    }
+    
+    match /landing/{fileName} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    match /jamaah/{userId}/{fileName} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    match /cms/{fileName} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+  }
+}
