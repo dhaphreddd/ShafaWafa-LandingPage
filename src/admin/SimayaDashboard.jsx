@@ -11,6 +11,7 @@ import { logAudit } from "../utils/auditLogger";
 import { notifyRegistrationStatus, notifyDonationStatus, createNotification } from "../utils/notificationHelper";
 import RoleManager from "./RoleManager";
 import NotificationBell from "./NotificationBell";
+import ReportsModule from "./ReportsModule";
 import "../styles/admin-styles.css";
 
 const SIMAYA_TABS = [
@@ -20,6 +21,7 @@ const SIMAYA_TABS = [
   { key: "registrations", label: "Registrasi", icon: "fas fa-clipboard-list" },
   { key: "donations", label: "Donasi", icon: "fas fa-hand-holding-heart" },
   { key: "roles", label: "Role Manager", icon: "fas fa-user-shield" },
+  { key: "reports", label: "Laporan", icon: "fas fa-chart-bar" },
 ];
 
 const PAGE_SIZE = 10;
@@ -478,6 +480,15 @@ export default function SimayaDashboard() {
               </div>
               <div style={{ padding: "20px" }}><RoleManager /></div>
             </div>
+          )}
+
+          {activeTab === "reports" && (
+            <ReportsModule
+              systemUsers={systemUsers}
+              systemEvents={systemEvents}
+              systemRegistrations={systemRegistrations}
+              systemDonations={systemDonations}
+            />
           )}
         </div>
       </div>
